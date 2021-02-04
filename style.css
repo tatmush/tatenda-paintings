@@ -1,0 +1,62 @@
+@font-face {
+    font-family: tat;
+    src: url(VCR_OSD_MONO.ttf);
+}
+* {
+    font-family: tat;
+}
+
+.container {
+    width: auto;
+    max-width: unset;
+    margin: 20px;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #fff;
+    color: #ababab;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.nav {
+    margin: 0;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+li{
+    margin: 10px 0;
+  }
+
+li a{
+    color: #ababab;
+}
+
+.content {
+    text-align: center;
+    z-index: 3;
+    margin-top: 100px;
+}
+
+.paintings {
+    margin-top: -100px;
+}
+
+.text {
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: justify;
+    text-justify: inter-word;
+}

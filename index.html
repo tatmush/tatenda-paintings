@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tatenda Paintings</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="style.css ">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container">
+            <div class="top_left"><a href="#" onclick="toggle_visibility('home');">Home</a></div>
+ 
+            <div class="content">
+                <div id="home" class="carousel paintings">
+                    <a class="carousel-item" href="#one"><img src="https://picsum.photos/id/700/200/300" alt="The Saint"></a>
+                    <a class="carousel-item" href="#two"><img src="https://picsum.photos/id/701/200/300" alt="Shallow Waters"></a>
+                    <a class="carousel-item" href="#three"><img src="https://picsum.photos/id/702/200/300" alt="Boni"></a>
+                    <a class="carousel-item" href="#four"><img src="https://picsum.photos/id/699/200/300" alt="Rebel"></a>
+                    <a class="carousel-item" href="#five"><img src="https://picsum.photos/id/698/200/300" alt="Merc"></a>
+                    <a class="carousel-item" href="#six"><img src="https://picsum.photos/id/696/200/300" alt="Love"></a>
+
+                    <span id="text" class="title"></span>
+                </div>
+                <div id="bio" class="text" style="display: none;">
+                    <p>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                </div>
+                <div id="resume" class="text" style="display: none;">
+                    <p>
+                        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                    </p>
+                </div>
+                <div id="contact" class="text" style="display: none;">
+                    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+                </div>
+
+            </div>
+
+            <div class="bottom-left">
+                <ul class="nav">
+                    <li><a href="#" onclick="toggle_visibility('bio');">Bio</a></li>
+                    <li><a href="#" onclick="toggle_visibility('resume');">Resume</a></li>
+                    <li><a href="#" onclick="toggle_visibility('contact');">Contact</a></li>
+                </ul>
+            </div>
+            <div class="bottom-right">
+               <a target="_blank" href="https://twitter.com/tatalmondmush">@tatalmondmush</a> 2021
+            </div>
+
+        </div>
+
+        <script>
+            let painting = document.getElementsByTagName("img");
+            var text = document.getElementById("text");
+
+            for (var i = 0; i < painting.length; i++) {
+                painting[i].addEventListener("mouseover", function() {
+                var alt = this.alt;
+                text.textContent = alt;
+                });
+            }
+
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let elems = document.querySelectorAll('.carousel');
+                let options = {}
+                let instances = M.Carousel.init(elems, options);
+
+
+            });
+
+
+        </script>
+        <script type="text/javascript">
+
+            function toggle_visibility(id) {
+                
+                let pages = ['home', 'bio', 'resume', 'contact'];
+                let index = pages.indexOf(id);
+                if (index > -1){
+                    pages.splice(index, 1);
+                }
+                pages.forEach(item => {
+                    let e = document.getElementById(item);
+                    e.style.display = 'none';
+                })
+                let e = document.getElementById(id);
+                e.style.display = 'block';
+            }
+
+            </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="" async defer></script>
+    </body>
+</html>
